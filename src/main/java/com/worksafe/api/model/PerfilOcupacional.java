@@ -26,6 +26,5 @@ public class PerfilOcupacional {
     private Long codAtividade;
     private String nomeAtividade;
     @ManyToOne
-    @JoinColumn(name = "normas_id")
-    private NormaRegulamentadora normas;
+    private NormaRegulamentadora norma;
 }

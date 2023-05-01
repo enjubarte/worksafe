@@ -25,6 +25,10 @@ public class ExameService {
         return repository.save(exame);
     }
 
+    public List<Exame> salvarAll(List<Exame> exames){
+        return repository.saveAll(exames);
+    }
+
     public void apagar(UUID id){
         repository.deleteById(id);
     }

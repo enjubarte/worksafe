@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-
 @RestController
 @RequestMapping("/perfil-ocupacional")
 @AllArgsConstructor
@@ -20,4 +18,10 @@ public class PerfilOcupacionalController {
     public ResponseEntity<?> listarTodos(){
         return new ResponseEntity<>(service.listarTodos(), HttpStatus.OK);
     }
+    @GetMapping("/sub-grupo-princpal/{codigo}")
+    public ResponseEntity<?> listarTodosPorSubGrupoPrincipal(Long codigo){
+        return new ResponseEntity<>(service.buscarPorSubGrupoPrincipal(codigo), HttpStatus.OK);
+    }
+
+
 }

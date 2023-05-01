@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -22,6 +23,10 @@ public class PerfilOcupacionalService {
 
     public PerfilOcupacional buscarPorId(UUID id){
         return repository.findById(id).orElseThrow(()->new RuntimeException("Perfil não existe!"));
+    }
+
+    public List<PerfilOcupacional> buscarPorSubGrupoPrincipal(Long codigo){
+        return  repository.findBySubGrupoPrincipal(codigo);
     }
 
     public PerfilOcupacional salvar( PerfilOcupacional perfil){

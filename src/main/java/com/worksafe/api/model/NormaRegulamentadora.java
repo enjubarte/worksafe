@@ -16,7 +16,8 @@ public class NormaRegulamentadora {
     private UUID id;
     private String codigo;
     private String descricao;
-    @OneToMany(mappedBy = "normas")
+
+    @OneToMany(mappedBy = "norma")
     @ToString.Exclude
     private List<PerfilOcupacional> perfis;
 }
