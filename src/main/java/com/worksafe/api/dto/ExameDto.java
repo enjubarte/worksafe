@@ -6,5 +6,9 @@ import java.util.UUID;
 /**
  * A DTO for the {@link com.worksafe.api.model.Exame} entity
  */
-public record ExameDto(UUID id, String nome, String descricao) implements Serializable {
+public record ExameDto(
+        UUID id,
+        String nome,
+        String descricao
+) implements Serializable {
 }

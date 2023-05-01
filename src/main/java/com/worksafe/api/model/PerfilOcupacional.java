@@ -1,11 +1,10 @@
 package com.worksafe.api.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import java.util.UUID;
 
 
 @Getter
@@ -15,9 +14,18 @@ import java.util.List;
 @Entity(name = "perfil_ocupacional")
 @NoArgsConstructor
 public class PerfilOcupacional {
-    @Id
-    private Long codigo;
-    private String nome;
-    private String descricao;
-
+    @Id @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id ;
+    private Long grandeGrupo;
+    private Long subGrupoPrincipal;
+    private Long subGrupo;
+    private Long familia;
+    private Long codOcupacao;
+    private String sglGrandeArea;
+    private String nomeGrandeArea;
+    private Long codAtividade;
+    private String nomeAtividade;
+    @ManyToOne
+    @JoinColumn(name = "normas_id")
+    private NormaRegulamentadora normas;
 }

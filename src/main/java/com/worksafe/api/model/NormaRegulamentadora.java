@@ -1,11 +1,9 @@
 package com.worksafe.api.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
 import java.util.UUID;
 @Getter
 @Setter
@@ -18,4 +16,7 @@ public class NormaRegulamentadora {
     private UUID id;
     private String codigo;
     private String descricao;
+    @OneToMany(mappedBy = "normas")
+    @ToString.Exclude
+    private List<PerfilOcupacional> perfis;
 }

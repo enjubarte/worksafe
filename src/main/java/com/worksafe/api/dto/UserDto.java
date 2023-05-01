@@ -1,4 +1,6 @@
-package com.worksafe.api.model;
+package com.worksafe.api.dto;
+
+import com.worksafe.api.model.User;
 
 import java.io.Serializable;
 import java.time.Instant;

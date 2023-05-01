@@ -2,6 +2,11 @@ package com.worksafe.api.repository;
 
 import com.worksafe.api.model.PerfilOcupacional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface PerfilOcupacionalRepository extends JpaRepository<PerfilOcupacional, Long> {
+import java.util.UUID;
+
+@Repository
+
+public interface PerfilOcupacionalRepository extends JpaRepository<PerfilOcupacional, UUID> {
 }
