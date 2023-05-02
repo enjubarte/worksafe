@@ -1,5 +1,7 @@
 package com.worksafe.api.repository;
 
+import com.worksafe.api.model.NormaRegulamentadora;
+import com.worksafe.api.model.PerfilNr;
 import com.worksafe.api.model.PerfilOcupacional;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,4 +16,8 @@ import java.util.UUID;
 
 public interface PerfilOcupacionalRepository extends JpaRepository<PerfilOcupacional, UUID> {
     List<PerfilOcupacional> findBySubGrupoPrincipal(Long codigo);
+    List<PerfilOcupacional> findByCodOcupacao(Long codigo);
+    List<PerfilOcupacional> findByFamilia(Long codigo);
+
+    List<PerfilNr> findByPerfilNrs();
 }

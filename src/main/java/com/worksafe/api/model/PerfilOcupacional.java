@@ -9,13 +9,13 @@ import java.util.UUID;
 
 @Getter
 @Setter
-@ToString
 @AllArgsConstructor
 @Entity(name = "perfil_ocupacional")
 @NoArgsConstructor
 public class PerfilOcupacional {
-    @Id @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id ;
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
     private Long grandeGrupo;
     private Long subGrupoPrincipal;
     private Long subGrupo;
@@ -25,6 +25,7 @@ public class PerfilOcupacional {
     private String nomeGrandeArea;
     private Long codAtividade;
     private String nomeAtividade;
-    @ManyToOne
-    private NormaRegulamentadora norma;
+
+    @OneToMany(mappedBy = "perfil")
+    private List<PerfilNr> perfilNrs;
 }

@@ -21,6 +21,10 @@ public class NormaRegulamentadoraService {
         return repository.findById(id).orElseThrow(()->new RuntimeException("Norma não encontrada!"));
     }
 
+    public List<NormaRegulamentadora> salvarTodas(List<NormaRegulamentadora> normas){
+        return repository.saveAll(normas);
+    }
+
     public NormaRegulamentadora salvar(NormaRegulamentadora norma){
         return repository.save(norma);
     }
@@ -32,10 +36,9 @@ public class NormaRegulamentadoraService {
     public NormaRegulamentadora atualizar(NormaRegulamentadora norma, UUID id){
         if(repository.existsById(id)){
             var update = buscarPorId(id);
-            update.setCodigo(norma.getCodigo());
+            update.setNr(norma.getNr());
+            update.setTitulo(norma.getTitulo());
             update.setDescricao(norma.getDescricao());
-            update.setPerfis(norma.getPerfis());
-            update.setPerfis(norma.getPerfis());
         }
         return null;
     }
